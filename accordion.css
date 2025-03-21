@@ -15,15 +15,21 @@ button.accordion {
   width: 100%;
   background-color: whitesmoke;
   border: none;
-
   text-align: left;
   padding: 15px 20px;
   font-size: 18px;
   color: #333;
   cursor: pointer;
-  transition: background-color 0.2s linear;
+  transition: all 0.2s linear; /* Changed to animate all properties */
+  position: relative; /* For focus ring positioning */
+  border-radius: 4px; /* Optional: for better focus ring shape */
+} 
+/* Add focus-visible styles */
+button.accordion:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px #6DC4F4, 0 0 0 6px rgba(109, 196, 244, 0.3);
+  z-index: 1; /* Ensure focus ring appears above other elements */
 }
-
 button.accordion:after {
   font-family: FontAwesome;
   content: "\f150";
